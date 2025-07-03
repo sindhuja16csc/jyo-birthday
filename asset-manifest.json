@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/jyo_birthday/static/css/main.fb3ac062.css",
+    "main.js": "/jyo_birthday/static/js/main.dbc2fd75.js",
+    "index.html": "/jyo_birthday/index.html",
+    "main.fb3ac062.css.map": "/jyo_birthday/static/css/main.fb3ac062.css.map",
+    "main.dbc2fd75.js.map": "/jyo_birthday/static/js/main.dbc2fd75.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb3ac062.css",
+    "static/js/main.dbc2fd75.js"
+  ]
+}
