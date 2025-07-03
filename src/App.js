@@ -235,12 +235,7 @@ function App() {
               key={i}
               src={q.image}
               alt={`gift-${i}`}
-              className="floating-photo"
-              style={{
-                top: `${Math.random() * 80}%`,
-                left: `${Math.random() * 80}%`,
-              }}
-            />
+              />
           ))}
         </div>
       )}
