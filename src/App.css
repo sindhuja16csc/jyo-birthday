@@ -1,38 +1,225 @@
-.App {
+.page {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.bg {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.center-box {
   text-align: center;
+  margin-top: 10%;
+  z-index: 2;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.centered-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  background: #ff6eb4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.quiz-box {
+  background: white;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px #ccc;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.quiz-box audio {
+  margin-bottom: 20px;
+}
+
+
+.options-row {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.option-button {
+  font-size: 18px;
+  padding: 12px 24px;
+  background: #ff6eb4;
   color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.option-button:hover {
+  transform: scale(1.05);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.teddy {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.big-text {
+  font-size: 40px;
+  color: #000000;
+}
+
+.blast-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(230, 221, 221, 0.5);
+  color: white;
+  font-size: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  animation: blastZoom 0.4s ease-in-out;
+}
+
+/* ✅ Add blast zoom animation */
+@keyframes blastZoom {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
+}
+
+.center-image {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+}
+
+.center-image img {
+  width: 250px;
+  border-radius: 20px;
+  border: 4px solid #fff;
+  box-shadow: 0 0 10px #333;
+}
+
+.score-panel {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  text-align: right;
+  background: rgba(255,255,255,0.8);
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 150px;
+  z-index: 2;
+}
+
+.unlocked-photos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.memory {
+  width: 80px;
+  margin: 5px 0;
+  border-radius: 10px;
+  border: 2px solid #ff80ab;
+}
+
+.birthday-final {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+}
+
+.birthday-final h1 {
+  width: 100%;
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #ff007f;
+}
+
+.gift-pic {
+  width: 120px;
+  height: auto;
+  margin: 10px;
+  border-radius: 20px;
+  border: 4px solid white;
+  box-shadow: 0 0 10px #ff69b4;
+}
+
+/* ✅ Full-screen expanding image */
+.full-image-blast {
+  position: fixed;
+  top: 0; left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: zoomIn 1s ease-in-out;
+}
+
+.full-image-blast img {
+  max-height: 90vh;
+  max-width: 90vw;
+  border-radius: 20px;
+  border: 5px solid #fff;
+  box-shadow: 0 0 30px #ff1493;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.wrong-msg {
+  font-size: 20px;
+  color: red;
+  margin-top: 20px;
 }
