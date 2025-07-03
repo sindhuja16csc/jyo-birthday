@@ -222,20 +222,10 @@ function App() {
       )}
 
       {finalStep && showBirthday && (
-        <div className="birthday-final scroll-container">
+        <div className="birthday-final centered-box">
           <h1>🎂 Happy Birthday 🎂</h1>
-          <button
-            className="scroll-top"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            Scroll to Top
-          </button>
           {unlocked.map((q, i) => (
-            <img
-              key={i}
-              src={q.image}
-              alt={`gift-${i}`}
-              />
+            <img key={i} src={q.image} alt={`gift-${i}`} className="gift-pic" />
           ))}
         </div>
       )}
