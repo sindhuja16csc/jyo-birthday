@@ -242,22 +242,3 @@ button {
   cursor: pointer;
   border-radius: 8px;
 }
-
-.floating-photo {
-  position: absolute;
-  width: 120px;
-  animation: float 10s infinite ease-in-out;
-  border-radius: 12px;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(5deg);
-  }
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-}
