@@ -74,14 +74,14 @@ const questions = [
   },
   {
     id: 11,
-    audio: `${process.env.PUBLIC_URL}/audio/surya.mp3`,
+    audio: `${process.env.PUBLIC_URL}/audio/Surya.mp3`,
     options: ["Sunil", "Surya", "Harsha"],
     correct: "Surya",
     image: `${process.env.PUBLIC_URL}/images/surya.jpg`,
   },
   {
     id: 12,
-    audio: `${process.env.PUBLIC_URL}/audio/sindhu.mp3`,
+    audio: `${process.env.PUBLIC_URL}/audio/Sindhu.mp3`,
     options: ["Sindhu", "sindhu", "Sindu"],
     correct: "Sindhu",
     image: `${process.env.PUBLIC_URL}/images/sindhu.jpg`,
@@ -222,10 +222,25 @@ function App() {
       )}
 
       {finalStep && showBirthday && (
-        <div className="birthday-final centered-box">
+        <div className="birthday-final scroll-container">
           <h1>🎂 Happy Birthday 🎂</h1>
+          <button
+            className="scroll-top"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            Scroll to Top
+          </button>
           {unlocked.map((q, i) => (
-            <img key={i} src={q.image} alt={`gift-${i}`} className="gift-pic" />
+            <img
+              key={i}
+              src={q.image}
+              alt={`gift-${i}`}
+              className="floating-photo"
+              style={{
+                top: `${Math.random() * 80}%`,
+                left: `${Math.random() * 80}%`,
+              }}
+            />
           ))}
         </div>
       )}
