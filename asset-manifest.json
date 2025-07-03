@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/jyo-birthday/static/css/main.15aa4ac5.css",
+    "main.css": "/jyo-birthday/static/css/main.b33ce95e.css",
     "main.js": "/jyo-birthday/static/js/main.01a07874.js",
     "index.html": "/jyo-birthday/index.html",
-    "main.15aa4ac5.css.map": "/jyo-birthday/static/css/main.15aa4ac5.css.map",
+    "main.b33ce95e.css.map": "/jyo-birthday/static/css/main.b33ce95e.css.map",
     "main.01a07874.js.map": "/jyo-birthday/static/js/main.01a07874.js.map"
   },
   "entrypoints": [
-    "static/css/main.15aa4ac5.css",
+    "static/css/main.b33ce95e.css",
     "static/js/main.01a07874.js"
   ]
 }
