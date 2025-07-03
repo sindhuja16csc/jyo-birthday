@@ -4,96 +4,94 @@ import "./App.css";
 const questions = [
   {
     id: 1,
-    audio: "/audio/adi.mp3",
+    audio: `${process.env.PUBLIC_URL}/audio/adi.mp3`,
     options: ["Tk", "Surya", "Aditya"],
     correct: "Aditya",
-    image: "/images/adi.jpg",
+    image: `${process.env.PUBLIC_URL}/images/adi.jpg`,
   },
   {
     id: 2,
-    audio: "/audio/jai.mp3",
+    audio: `${process.env.PUBLIC_URL}/audio/jai.mp3`,
     options: ["Vinay", "Jairaj", "Rakesh"],
     correct: "Jairaj",
-    image: "/images/jai.jpg",
+    image: `${process.env.PUBLIC_URL}/images/jai.jpg`,
   },
   {
     id: 3,
-    audio: "/audio/lavs.mp3",
+    audio: `${process.env.PUBLIC_URL}/audio/lavs.mp3`,
     options: ["Lavanya", "Sarika", "Rohini"],
     correct: "Lavanya",
-    image: "/images/lavs.jpg",
+    image: `${process.env.PUBLIC_URL}/images/lavs.jpg`,
   },
   {
     id: 4,
-    audio: "/audio/rakesh.mp3",
+    audio: `${process.env.PUBLIC_URL}/audio/rakesh.mp3`,
     options: ["Shiva", "Pardiv", "Rakesh"],
     correct: "Rakesh",
-    image: "/images/rakesh.jpg",
+    image: `${process.env.PUBLIC_URL}/images/rakesh.jpg`,
   },
   {
     id: 5,
-    audio: "/audio/rohini.mp3",
+    audio: `${process.env.PUBLIC_URL}/audio/rohini.mp3`,
     options: ["Sindhu", "Rohini", "Sarika"],
     correct: "Rohini",
-    image: "/images/rohini.jpg",
+    image: `${process.env.PUBLIC_URL}/images/rohini.jpg`,
   },
   {
     id: 6,
-    audio: "/audio/sarika.mp3",
-    options: ["Sarika", "Lavaya", "Sindhu"],
+    audio: `${process.env.PUBLIC_URL}/audio/sarika.mp3`,
+    options: ["Sarika", "Lavanya", "Sindhu"],
     correct: "Sarika",
-    image: "/images/sarika.jpg",
+    image: `${process.env.PUBLIC_URL}/images/sarika.jpg`,
   },
   {
     id: 7,
-    audio: "/audio/vinay.mp3",
+    audio: `${process.env.PUBLIC_URL}/audio/vinay.mp3`,
     options: ["Vinay", "Shiva", "Varun"],
     correct: "Vinay",
-    image: "/images/vinay.jpg",
+    image: `${process.env.PUBLIC_URL}/images/vinay.jpg`,
   },
   {
     id: 8,
-    audio: "/audio/pardiv.mp3",
+    audio: `${process.env.PUBLIC_URL}/audio/pardiv.mp3`,
     options: ["Pardiv", "Surya", "Sunil"],
     correct: "Pardiv",
-    image: "/images/pardiv.jpg",
+    image: `${process.env.PUBLIC_URL}/images/pardiv.jpg`,
   },
   {
     id: 9,
-    audio: "/audio/tk.mp3",
+    audio: `${process.env.PUBLIC_URL}/audio/tk.mp3`,
     options: ["Jairaj", "Aditya", "Ganesh"],
     correct: "Ganesh",
-    image: "/images/tk.jpg",
+    image: `${process.env.PUBLIC_URL}/images/tk.jpg`,
   },
   {
     id: 10,
-    audio: "/audio/shiva.mp3",
+    audio: `${process.env.PUBLIC_URL}/audio/shiva.mp3`,
     options: ["Jairaj", "Sairohit", "Shiva"],
     correct: "Shiva",
-    image: "/images/shiva.jpg",
+    image: `${process.env.PUBLIC_URL}/images/shiva.jpg`,
   },
-
   {
     id: 11,
-    audio: "/audio/Surya.mp3",
+    audio: `${process.env.PUBLIC_URL}/audio/Surya.mp3`,
     options: ["Sunil", "Surya", "Harsha"],
     correct: "Surya",
-    image: "/images/surya.jpg", 
+    image: `${process.env.PUBLIC_URL}/images/surya.jpg`,
   },
-
   {
     id: 12,
-    audio: "/audio/Sindhu.mp3",
+    audio: `${process.env.PUBLIC_URL}/audio/Sindhu.mp3`,
     options: ["Sindhu", "sindhu", "Sindu"],
     correct: "Sindhu",
-    image: "/images/sindhu.jpg",
+    image: `${process.env.PUBLIC_URL}/images/sindhu.jpg`,
   },
   {
-    id: 12,
-    audio: "/audio/jyo.mp3",
+    id: 13,
+    audio: `${process.env.PUBLIC_URL}/audio/jyo.mp3`,
     options: ["Sairohit", "Sunil", "Harsha"],
     correct: "Sairohit",
-    image: "/images/jyo.jpg",
+    image: `${process.env.PUBLIC_URL}/images/jyo.jpg`,
   },
 ];
 
@@ -128,7 +126,6 @@ function App() {
     } else {
       setWrong(true);
       setAudioEnded(false);
-      // Replay the audio
       if (audioRef.current) {
         audioRef.current.currentTime = 0;
         audioRef.current.play();
@@ -138,24 +135,21 @@ function App() {
 
   return (
     <div className="page">
-      <img src="/images/bg.jpg" alt="bg" className="bg" />
-
-      {/* Score Panel */}
+      <img src={`${process.env.PUBLIC_URL}/images/bg.jpg`} alt="bg" className="bg" />
       {isJyothsna && confirmCheck && !finalStep && (
         <div className="score-panel">
           <h3>Score: {score}</h3>
           <div className="unlocked-photos">
             {unlocked.map((q) => (
-              <img key={q.id} src={q.image} alt="memory" className="memory" />
+              <img key={q.id} src={q.image} alt={`${q.correct}'s photo`} className="memory" />
             ))}
           </div>
         </div>
       )}
 
-      {/* Welcome */}
       {isJyothsna === null && (
         <div className="center-box">
-          <img src="/images/teddy.jpeg" alt="teddy" className="teddy" />
+          <img src={`${process.env.PUBLIC_URL}/images/teddy.jpeg`} alt="teddy" className="teddy" />
           <h2>Is this Jyothsna?</h2>
           <button onClick={() => setIsJyothsna(true)}>Yes</button>
           <button onClick={() => setIsJyothsna(false)}>No</button>
@@ -175,7 +169,6 @@ function App() {
         </div>
       )}
 
-      {/* Quiz Box */}
       {isJyothsna && confirmCheck && currentQ < questions.length && (
         <div className="quiz-box centered-box">
           <h3>Guess the audio?</h3>
@@ -188,9 +181,7 @@ function App() {
             onPlay={() => setAudioEnded(false)}
           ></audio>
 
-          {!audioEnded && (
-            <p className="waiting-msg">⏳ Listen completely before answering!</p>
-          )}
+          {!audioEnded && <p className="waiting-msg">⏳ Listen completely before answering!</p>}
 
           <div className="options-row">
             {questions[currentQ].options.map((opt, i) => (
@@ -205,13 +196,10 @@ function App() {
             ))}
           </div>
 
-          {wrong && (
-            <p className="wrong-msg">❌ Oops! Try again after replaying the audio.</p>
-          )}
+          {wrong && <p className="wrong-msg">❌ Oops! Try again after replaying the audio.</p>}
         </div>
       )}
 
-      {/* Blast effect and center image */}
       {blast && <div className="blast-screen">💥</div>}
       {showCenterImage && (
         <div className="full-image-blast">
@@ -219,7 +207,6 @@ function App() {
         </div>
       )}
 
-      {/* Gift unlock step */}
       {isJyothsna && confirmCheck && currentQ >= questions.length && !finalStep && (
         <div className="center-box">
           <h2>You can unlock now your gift 🎁</h2>
@@ -227,7 +214,6 @@ function App() {
         </div>
       )}
 
-      {/* Show button for birthday */}
       {finalStep && !showBirthday && (
         <div className="center-box">
           <h1>Click to see surprise 🎉</h1>
@@ -235,7 +221,6 @@ function App() {
         </div>
       )}
 
-      {/* Final Happy Birthday View */}
       {finalStep && showBirthday && (
         <div className="birthday-final centered-box">
           <h1>🎂 Happy Birthday 🎂</h1>
