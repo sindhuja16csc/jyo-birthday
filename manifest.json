@@ -1,0 +1,13 @@
+{
+  "short_name": "Jyo",
+  "name": "Jyo Birthday App",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> 8179dedd311cb6e112ce12c01bab2a5672ccc13e
