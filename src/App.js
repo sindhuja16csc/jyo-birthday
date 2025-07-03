@@ -74,14 +74,14 @@ const questions = [
   },
   {
     id: 11,
-    audio: `${process.env.PUBLIC_URL}/audio/Surya.mp3`,
+    audio: `${process.env.PUBLIC_URL}/audio/surya.mp3`,
     options: ["Sunil", "Surya", "Harsha"],
     correct: "Surya",
     image: `${process.env.PUBLIC_URL}/images/surya.jpg`,
   },
   {
     id: 12,
-    audio: `${process.env.PUBLIC_URL}/audio/Sindhu.mp3`,
+    audio: `${process.env.PUBLIC_URL}/audio/sindhu.mp3`,
     options: ["Sindhu", "sindhu", "Sindu"],
     correct: "Sindhu",
     image: `${process.env.PUBLIC_URL}/images/sindhu.jpg`,
